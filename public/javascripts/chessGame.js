@@ -1,6 +1,7 @@
 const socket = io(); 
 const chess = new Chess();
 const boardElement = document.querySelector(".chessboard")
+const headerElement = document.querySelector(".header")
 
 let draggedPiece = null;
 let sourceSquare = null;
@@ -69,6 +70,15 @@ if(playerRole === "b" ){
     boardElement.classList.add("flipped")
 }else {
     boardElement.classList.remove("flipped")
+}
+
+
+if(playerRole === "w"){
+    headerElement.innerText = "player 1"
+}else if(playerRole === "b"){
+    headerElement.innerText = "player 2"
+}else{
+    headerElement.innerText = "spectator"
 }
 }
 
